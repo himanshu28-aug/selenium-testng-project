@@ -47,28 +47,54 @@ public class NewTest {
 		
 		WebElement product= driver.findElement(By.className("inventory_item_name"));
 		product.click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		System.out.println("Now product is fetched successfully");
 		
-		driver.navigate().back();
-		Thread.sleep(5000);
+		
+		WebElement cartAdd =driver.findElement(By.id("add-to-cart"));
+		cartAdd.click();
+		System.out.println("Now product is added to cart successfully");
+		
+		WebElement shoppingCart =driver.findElement(By.className("shopping_cart_link"));
+		shoppingCart.click();
+		System.out.println("Now product is added to shopping  successfully");
+		
+		WebElement checkoutButton =driver.findElement(By.id("checkout"));
+		checkoutButton.click();
+		System.out.println("Now product is checked out  successfully");
+		
+		WebElement firstName=driver.findElement(By.name("firstName"));
+		firstName.sendKeys("Himanshu");
+		
+		WebElement lastName=driver.findElement(By.name("lastName"));
+		lastName.sendKeys("Gupta");
+		
+		WebElement postalCode=driver.findElement(By.name("postalCode"));
+		postalCode.sendKeys("485001");
 		
 		
+		WebElement continueButton =driver.findElement(By.id("continue"));
+		continueButton.click();
+		System.out.println("Continued Successfully");
+		
+		WebElement finishButton =driver.findElement(By.id("finish"));
+		finishButton.click();
+		System.out.println("Finished Successfully");
+		
+		Thread.sleep(2000);
+		
+//		driver.navigate().back();
+//		Thread.sleep(5000);
+//		
 		WebElement menuButton = driver.findElement(By.id("react-burger-menu-btn"));
 		menuButton.click();
 		System.out.println("Clicked menu button success");
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		
 		WebElement logout = driver.findElement(By.id("logout_sidebar_link"));
 		logout.click();
 		System.out.println("Logged out successfully");
-		Thread.sleep(5000);
-		
-//		
-//		String currentUrl= driver.getCurrentUrl();
-//		Assert.assertEquals(currentUrl.contains("inventory"), "Page do not open");
-//		System.out.println("Checked inventory");
-		
+		Thread.sleep(2000);
 	 }
 	 catch (Exception e) {
 		 System.out.println("Website is having error");
