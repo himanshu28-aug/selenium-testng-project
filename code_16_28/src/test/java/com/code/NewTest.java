@@ -1,5 +1,6 @@
 package com.code;
 
+import java.awt.print.Pageable;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -42,13 +43,32 @@ public class NewTest {
 		String actualTitle= driver.getTitle();
 		String expectedTitle = "Swag Labs";
 		Assert.assertEquals(actualTitle, expectedTitle,"Title do not match");
-		System.out.println("Able t check ");
+		System.out.println("Able to check ");
+		
+		WebElement product= driver.findElement(By.className("inventory_item_name"));
+		product.click();
+		Thread.sleep(5000);
+		System.out.println("Now product is fetched successfully");
+		
+		driver.navigate().back();
+		Thread.sleep(5000);
 		
 		
+		WebElement menuButton = driver.findElement(By.id("react-burger-menu-btn"));
+		menuButton.click();
+		System.out.println("Clicked menu button success");
+		Thread.sleep(5000);
 		
+		WebElement logout = driver.findElement(By.id("logout_sidebar_link"));
+		logout.click();
+		System.out.println("Logged out successfully");
+		Thread.sleep(5000);
 		
-			 
-		 
+//		
+//		String currentUrl= driver.getCurrentUrl();
+//		Assert.assertEquals(currentUrl.contains("inventory"), "Page do not open");
+//		System.out.println("Checked inventory");
+		
 	 }
 	 catch (Exception e) {
 		 System.out.println("Website is having error");
