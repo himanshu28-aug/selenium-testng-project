@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class NewTest {
@@ -37,6 +38,15 @@ public class NewTest {
 		button.click();
 		System.out.println("Able to click");
 		Thread.sleep(5000);
+		
+		String actualTitle= driver.getTitle();
+		String expectedTitle = "Swag Labs";
+		Assert.assertEquals(actualTitle, expectedTitle,"Title do not match");
+		System.out.println("Able t check ");
+		
+		
+		
+		
 			 
 		 
 	 }
